@@ -48,4 +48,15 @@ print(f"Total of the numbers: {total}")
 print(f"Average of the numbers: {average:.2f}")
 
 
+def display_greater_numbers(numbers_list, n):
+    for number in numbers_list:
+        if number > n:
+            print(number)
+numbers = [10, 20, 30, 40, 50]
+n = 25
+display_greater_numbers(numbers, n)
+
+
+
+
 
