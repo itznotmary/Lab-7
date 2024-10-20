@@ -57,6 +57,33 @@ n = 25
 display_greater_numbers(numbers, n)
 
 
+def grade_exam(correct_answers, user_answers):
+    score = 0
+    incorrect_questions = []
+    for i in range(len(correct_answers)):
+        if correct_answers[i] == user_answers[i]:
+            score += 1
+        else:
+            incorrect_questions.append(i + 1)
+    return score, incorrect_questions
+def read_answers_from_file(filename):
+    with open(filename, 'r') as file:
+        answers = file.read().splitlines()
+    return answers
+correct_answers = ['A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D', 'A', 'B', 'C', 'D']
+user_answers = read_answers_from_file('user_answers.txt')
+score, incorrect_questions = grade_exam(correct_answers, user_answers)
+print(f'Your score is: {score}/20')
+if score >= 15:
+    print("Congratulations! You passed the exam.")
+else:
+    print("Sorry, you did not pass the exam.")
+print(f'Total correct answers: {score}')
+print(f'Total incorrect answers: {20 - score}')
+print(f'Questions answered incorrectly: {incorrect_questions}')
+
+
+
 
 
 
