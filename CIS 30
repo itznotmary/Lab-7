@@ -123,6 +123,18 @@ if __name__ == '__main__':
 
 
 
+def read_winners_from_file(filename):
+    with open(filename, 'r') as file:
+        winners = file.read().splitlines()
+    return winners
+def count_team_wins(winners_list, team_name):
+    return winners_list.count(team_name)
+winners_list = read_winners_from_file('WorldSeriesWinners.txt')
+team_name = input('Enter the name of a team: ')
+wins = count_team_wins(winners_list, team_name)
+print(f'{team_name} has won the World Series {wins} times from 1903 through 2009.')
+
+
 
 
 
