@@ -98,6 +98,30 @@ check_name_in_list(names_list, user_name)
 
 
 
+def read_population_from_file(filename):
+    with open(filename, 'r') as file:
+        population = [int(line.strip()) for line in file]
+    return population
+def calculate_population_changes(population):
+    changes = []
+    for i in range(1, len(population)):
+        changes.append(population[i] - population[i - 1])
+    return changes
+def main():
+    population = read_population_from_file('USPopulation.txt')
+    changes = calculate_population_changes(population)
+    average_change = sum(changes) / len(changes)
+    greatest_increase = max(changes)
+    smallest_increase = min(changes)
+    year_greatest_increase = 1950 + changes.index(greatest_increase) + 1
+    year_smallest_increase = 1950 + changes.index(smallest_increase) + 1
+    print(f'Average annual change in population: {average_change:.2f} thousand')
+    print(f'Year with the greatest increase in population: {year_greatest_increase}')
+    print(f'Year with the smallest increase in population: {year_smallest_increase}')
+if __name__ == '__main__':
+    main()
+
+
 
 
 
