@@ -83,6 +83,24 @@ print(f'Total incorrect answers: {20 - score}')
 print(f'Questions answered incorrectly: {incorrect_questions}')
 
 
+def read_names_from_file(filename):
+    with open(filename, 'r') as file:
+        names = file.read().splitlines()
+    return names
+def check_name_in_list(names_list, name):
+    if name in names_list:
+        print(f'{name} was among the most popular names.')
+    else:
+        print(f'{name} was not among the most popular names.')
+names_list = read_names_from_file('popular_names.txt')
+user_name = input('Enter a name to check: ')
+check_name_in_list(names_list, user_name)
+
+
+
+
+
+
 
 
 
