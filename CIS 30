@@ -1,0 +1,51 @@
+sales = []
+for i in range(7):
+sale = float(input(f"Enter sales for day {i+1}: "))
+ sales.append(sale)
+total_sales = sum(sales)
+print(f"Total sales for the week: ${total_sales:.2f}")
+
+
+import random
+lottery_numbers = []
+for _ in range(7):
+    number = random.randint(0, 9)
+    lottery_numbers.append(number)
+print("Lottery number:", ''.join(map(str, lottery_numbers)))
+print("Contents of the list:")
+for number in lottery_numbers:
+    print(number)
+
+
+rainfall = []
+for i in range(12):
+    amount = float(input(f"Enter the total rainfall for month {i+1}: "))
+    rainfall.append(amount)
+total_rainfall = sum(rainfall)
+average_rainfall = total_rainfall / 12
+highest_rainfall = max(rainfall)
+lowest_rainfall = min(rainfall)
+highest_month = rainfall.index(highest_rainfall) + 1
+lowest_month = rainfall.index(lowest_rainfall) + 1
+print(f"Total rainfall for the year: {total_rainfall:.2f} inches")
+print(f"Average monthly rainfall: {average_rainfall:.2f} inches")
+print(f"Month with the highest rainfall: Month {highest_month} with {highest_rainfall:.2f} inches")
+print(f"Month with the lowest rainfall: Month {lowest_month} with {lowest_rainfall:.2f} inches")
+
+
+
+numbers = []
+for i in range(20):
+    number = float(input(f"Enter number {i+1}: "))
+    numbers.append(number)
+lowest_number = min(numbers)
+highest_number = max(numbers)
+total = sum(numbers)
+average = total / 20
+print(f"Lowest number: {lowest_number}")
+print(f"Highest number: {highest_number}")
+print(f"Total of the numbers: {total}")
+print(f"Average of the numbers: {average:.2f}")
+
+
+
